@@ -1,0 +1,87 @@
+
+<Digital Image Processing Final Project>
+
+此次期末專題為數人，將判斷出的人標起來，並且在圖像中顯示總共多少人，共分兩個部分，如下：
+1. 圖片共10張，佔期末專題70分。
+2. 影片大約1分鐘，共包含6個片段，佔期末專題30分。
+
+注意事項：
+1. 評分標準為圖像中算出的正確標註人頭與總數目為依據。
+2. 須提上傳判斷結果報告與能獨立執行的程式執行檔作為最後評分依據。
+3. 判斷程式必須要能產生或即時播出影片，並且在影像畫面中即時標註判斷的人頭與總數。
+
+Final Results: 
+
+	https://drive.google.com/file/d/1qwhjEg-DJ8hQl3sDX6VUGci3pp-ax78P/view?usp=sharing
+	Please refer to <Results> repository.
+
+
+
+[Source code - YOLOv4_Person_Detection_<YYYYMMDD>]      *Will keep updating...
+
+Download the source code from google cloud if you need:
+
+	https://drive.google.com/file/d/1DL-h873zwYO-dunjQ0nXU2veeSaEWf2s/view?usp=sharing
+
+
+
+[Environment & Requirement]
+
+1. Environment
+	OS: Windows 10 x64
+	IDE: Visual Studio 2017
+	GPU (Display card): nvidia GTX1050 
+
+2. Requirement
+	Windows 10
+	CMake >= 3.12
+	CUDA 10.0
+	OpenCV >= 2.4
+	cuDNN >= 7.0 for CUDA 10.0 
+	GPU with CC >= 3.0
+	Windows MSVC 2015/2017/2019
+
+
+
+[Use on the command line]
+
+1. Change path to the root repository
+
+	cd D:\DIP_final_0860520_0625\
+
+2. Execute this program by typing in following command
+
+   Image:
+	darknet.exe detector test .\data\coco.data .\cfg\yolov4.cfg .\weights\yolov4.weights .\data\1.jpg
+   
+   Video:
+	darknet.exe detector demo .\data\coco.data .\cfg\yolov4.cfg .\weights\yolov4.weights .\data\20191230_60s.mp4 -out_filename Predictions.avi
+
+3. Adding theshold value if needed
+
+   *For example: Add threshold = 0.4 in order to remove the prediction that probability that lower than 40%
+
+   Image: 
+	darknet.exe detector test .\data\coco.data .\cfg\yolov4.cfg .\weights\yolov4.weights .\data\10.jpg -thresh 0.4
+
+   Video:
+	darknet.exe detector demo .\data\coco.data .\cfg\yolov4.cfg .\weights\yolov4.weights .\data\20191230_60s.mp4 -thresh 0.4 -out_filename Predictions_20191230_60s.avi
+
+
+
+[Reference]
+
+1. Paper Yolo-v4: 
+	https://arxiv.org/abs/2004.10934
+
+2. Yolo-v4 and Yolo-v3/v2 for Windows and Linux
+	https://github.com/AlexeyAB/darknet
+
+3. Windows10 + YOLOV3 + VisualStudio2017 最新版本超詳細過程
+	https://blog.csdn.net/KID_yuan/article/details/88380269
+
+
+
+
+
+
